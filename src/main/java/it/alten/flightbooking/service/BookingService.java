@@ -15,4 +15,5 @@ public interface BookingService {
 
     boolean cancelBooking(Long id);
     Booking save(BookingDto bookingDto);
+    Booking findById(Long id);
 }

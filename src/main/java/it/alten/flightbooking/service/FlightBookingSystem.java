@@ -1,5 +1,6 @@
 package it.alten.flightbooking.service;
 
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import it.alten.flightbooking.models.Model.Booking;
 import it.alten.flightbooking.models.Model.Flight;
 import it.alten.flightbooking.models.dto.BookingDto;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-
 @Service
 public class FlightBookingSystem implements BookingService{
 
@@ -63,4 +63,8 @@ public class FlightBookingSystem implements BookingService{
         return repo.save(modelMapper.map(bookingDto, Booking.class));
 
     }
+
+    @Override
+    public Booking findById(Long id) {
+        return repo.findById(id).orElseThrow(ResourceNotFoundException::new);}
 }

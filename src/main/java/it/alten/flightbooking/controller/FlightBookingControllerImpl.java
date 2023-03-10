@@ -6,13 +6,9 @@ import it.alten.flightbooking.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequestMapping("/bookings")
 @RestController
@@ -28,16 +24,16 @@ public class FlightBookingControllerImpl implements FlightBookingController{
     }
 
     @Override
-    public ResponseEntity<Optional<Booking>> findById(Long id) {
-
-        //TODO
-        return null;
+    @GetMapping("/{id}")
+    public ResponseEntity<Booking> findById(Long id) {
+        Booking bookingFind = bookingService.findById(id);
+        return new ResponseEntity<>(bookingFind, HttpStatus.FOUND);
     }
 
     @Override
     public ResponseEntity<List<Booking>> findAll() {
-
         //TODO
         return null;
     }
+
 }
