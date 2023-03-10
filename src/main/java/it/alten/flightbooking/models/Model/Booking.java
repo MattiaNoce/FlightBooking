@@ -22,6 +22,7 @@ public class Booking implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String flightNumber;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate flightDate;

@@ -36,4 +36,11 @@ public class FlightBookingControllerImpl implements FlightBookingController{
         return null;
     }
 
+    @Override
+    @GetMapping("/findByFlight/{flightNumber}")
+    public ResponseEntity<Booking> findByFlightNumber(String flightNumber ) {
+        Booking bookingFind = bookingService.findByFlightNumber(flightNumber);
+        return new ResponseEntity<>(bookingFind, HttpStatus.FOUND);
+    }
+
 }

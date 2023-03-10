@@ -67,4 +67,11 @@ public class FlightBookingSystem implements BookingService{
     @Override
     public Booking findById(Long id) {
         return repo.findById(id).orElseThrow(ResourceNotFoundException::new);}
+
+    @Override
+    public Booking findByFlightNumber(String flightNumber) {
+        return repo.findByFlightNumber(flightNumber).orElseThrow(ResourceNotFoundException::new);
+    }
+
+
 }

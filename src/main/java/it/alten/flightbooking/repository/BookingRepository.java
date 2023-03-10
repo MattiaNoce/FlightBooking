@@ -21,6 +21,6 @@ public interface BookingRepository extends JpaRepository<Booking,Long> {
     List<Booking> findByPassengerName(String passengerName);
 
     List<Booking> findBookingsByFlightNumberAndFlightDate(String flightNumber, Date flightDate);
-    List<Booking> findByFlightNumber(String flightNumber);
+    Optional<Booking> findByFlightNumber(String flightNumber);
 
 }

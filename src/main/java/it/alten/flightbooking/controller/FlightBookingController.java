@@ -17,4 +17,12 @@ public interface FlightBookingController {
 
     @GetMapping()
     ResponseEntity<List<Booking>> findAll();
+
+    @GetMapping("/{findByFlightNumber}")
+    ResponseEntity<Booking> findByFlightNumber(@PathVariable("flightNumber") String flightNumber);
+
+
+
 }
+
+
