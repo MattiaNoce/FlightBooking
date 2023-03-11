@@ -27,7 +27,7 @@ public class Flight implements Serializable {
     private String toAirport;
 
 
-    private String depatureTime;
+    private String departureTime;
 
     private String landingTime;
 
