@@ -3,9 +3,12 @@ package it.alten.flightbooking.controller;
 import it.alten.flightbooking.models.Model.Flight;
 import it.alten.flightbooking.models.dto.FlightDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/flight")
 public class FlightControllerImpl implements  FlightController{
 
     @Override
