@@ -31,9 +31,10 @@ public class FlightBookingControllerImpl implements FlightBookingController{
     }
 
     @Override
+    @GetMapping("/")
     public ResponseEntity<List<Booking>> findAll() {
-        //TODO
-        return null;
+        List<Booking> bookingList = bookingService.findAll();
+        return new ResponseEntity<>(bookingList, HttpStatus.FOUND);
     }
 
     @Override

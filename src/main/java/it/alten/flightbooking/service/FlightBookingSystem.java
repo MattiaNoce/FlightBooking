@@ -73,5 +73,10 @@ public class FlightBookingSystem implements BookingService{
         return repo.findByFlightNumber(flightNumber).orElseThrow(ResourceNotFoundException::new);
     }
 
+    @Override
+    public List<Booking> findAll() {
+        return repo.findAll();
+    }
+
 
 }

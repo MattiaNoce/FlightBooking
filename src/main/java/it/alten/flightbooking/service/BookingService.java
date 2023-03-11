@@ -21,4 +21,5 @@ public interface BookingService {
     Booking findById(Long id);
 
     Booking findByFlightNumber(String flightNumber);
+    List<Booking> findAll();
 }
