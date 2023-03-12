@@ -1,14 +1,17 @@
 package it.alten.flightbooking.repository;
 
 import it.alten.flightbooking.models.Model.Flight;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+@Repository
+public interface FlightRepository extends JpaRepository<Flight,Long> {
 
-public class FlightRepository {
+   /*
 
-    private List<Flight> flights = new ArrayList<>();
+   //codice consegnato a fine test
+
+   private List<Flight> flights = new ArrayList<>();
     public FlightRepository(){
         Date date = new Date();
         flights.add(
@@ -55,4 +58,6 @@ public class FlightRepository {
         }
         return found;
     }
+
+    */
 }

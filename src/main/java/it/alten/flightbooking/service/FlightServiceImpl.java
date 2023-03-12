@@ -1,18 +1,23 @@
 package it.alten.flightbooking.service;
 
-import com.sun.xml.bind.v2.TODO;
 import it.alten.flightbooking.models.Model.Flight;
 import it.alten.flightbooking.models.dto.FlightDto;
+import it.alten.flightbooking.repository.FlightRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class FlightServiceImpl implements FlightService {
+    @Autowired
+    FlightRepository repo;
+
 
     @Override
-    public Flight save(FlightDto flightDto) {
-        //TODO
-        return null;
+    public Flight save(Flight flight) {
+
+
+        return repo.save(flight);
     }
 
     @Override

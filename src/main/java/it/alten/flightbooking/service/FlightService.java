@@ -6,7 +6,7 @@ import it.alten.flightbooking.models.dto.FlightDto;
 import java.util.List;
 
 public interface FlightService {
-    Flight save(FlightDto flightDto);
+    Flight save(Flight flight);
     Flight update(Long id,FlightDto flightDto);
     Flight deleteById(Long id);
     List<Flight> deleteAll();

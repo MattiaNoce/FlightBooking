@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/flights")
 public interface FlightController {
     @PostMapping()
-    ResponseEntity<Flight> save(@RequestBody FlightDto flightDto);
+    ResponseEntity<Flight> save(@RequestBody Flight flight);
 
     @GetMapping("/{id}")
     ResponseEntity<Flight> findById(@PathVariable("id") Long id);

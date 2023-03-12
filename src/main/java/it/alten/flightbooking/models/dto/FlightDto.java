@@ -1,11 +1,9 @@
 package it.alten.flightbooking.models.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class FlightDto {
-    private Long id;
 
     private String fromAirport;
 
@@ -16,7 +14,7 @@ public class FlightDto {
 
     private String landingTime;
 
-    private Date date;
+    private LocalDate date;
 
     private int seats;
     private String flightNumber;

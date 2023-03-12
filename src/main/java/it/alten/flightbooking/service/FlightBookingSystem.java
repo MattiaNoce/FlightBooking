@@ -18,32 +18,42 @@ public class FlightBookingSystem implements BookingService{
     @Autowired
     BookingRepository repo;
 
-    FlightRepository flightRepo = new FlightRepository();
-
-
     @Override
     public boolean bookFlight(String flightNumber, Date flightDate, String passengerName, int numSeats) {
-        if(!repo.findBookingsByFlightNumberAndFlightDate(flightNumber,flightDate).isEmpty()  &&
-                !repo.findByPassengerName(passengerName).isEmpty()   &&
-                flightRepo.findByFlightNumber(flightNumber).getSeats()>=numSeats){
-            return true;
-        }
         return false;
     }
 
     @Override
     public List<Booking> getFlightBookings(String flightNumber, Date flightDate) {
-        return repo.findBookingsByFlightNumberAndFlightDate(flightNumber,flightDate);
+        return null;
     }
 
-    public int getAvailableSeats(String flightNumber, Date flightDate){
-        return flightRepo.findByFlightNumberAndFlightDate(flightNumber,flightDate).getSeats();
-    }
+    /* FlightRepository flightRepo = new FlightRepository();
 
-    public List<Flight> getFlights(String fromAirport, String toAirport, Date date){
-        return flightRepo.findByFromAirportAndToAirportAndDate(fromAirport,toAirport,date);
-    }
 
+        @Override
+        public boolean bookFlight(String flightNumber, Date flightDate, String passengerName, int numSeats) {
+            if(!repo.findBookingsByFlightNumberAndFlightDate(flightNumber,flightDate).isEmpty()  &&
+                    !repo.findByPassengerName(passengerName).isEmpty()   &&
+                    flightRepo.findByFlightNumber(flightNumber).getSeats()>=numSeats){
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public List<Booking> getFlightBookings(String flightNumber, Date flightDate) {
+            return repo.findBookingsByFlightNumberAndFlightDate(flightNumber,flightDate);
+        }
+
+        public int getAvailableSeats(String flightNumber, Date flightDate){
+            return flightRepo.findByFlightNumberAndFlightDate(flightNumber,flightDate).getSeats();
+        }
+
+        public List<Flight> getFlights(String fromAirport, String toAirport, Date date){
+            return flightRepo.findByFromAirportAndToAirportAndDate(fromAirport,toAirport,date);
+        }
+    */
     @Override
     public List<Booking> getPassengerBookings(String passengerName) {
         return repo.findByPassengerName(passengerName);
