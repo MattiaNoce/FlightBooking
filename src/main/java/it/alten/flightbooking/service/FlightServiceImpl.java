@@ -15,8 +15,6 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public Flight save(Flight flight) {
-
-
         return repo.save(flight);
     }
 
